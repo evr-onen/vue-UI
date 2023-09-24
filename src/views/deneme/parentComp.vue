@@ -11,7 +11,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import childComp from "./childComp.vue";
-import { products } from "@/constant/products";
+// import { products } from "@/constant/products";
 
 // const yyy = ref(products);
 
