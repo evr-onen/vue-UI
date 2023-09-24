@@ -1,0 +1,1 @@
+alismak icin yaptigim birsey.
