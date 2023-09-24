@@ -13,11 +13,11 @@ import { ref, computed } from "vue";
 import childComp from "./childComp.vue";
 import { products } from "@/constant/products";
 
-const yyy = ref(products);
+// const yyy = ref(products);
 
-const deleteItem = (index) => {
-	yyy.value = yyy.value.filter((_, ind) => ind !== index);
-};
+// const deleteItem = (index) => {
+// 	yyy.value = yyy.value.filter((_, ind) => ind !== index);
+// };
 </script>
 
 <style>
