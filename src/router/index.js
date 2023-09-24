@@ -91,22 +91,22 @@ const router = createRouter({
 						{
 							path: "footertemplates",
 							name: "FooterTemplates",
-							component: () => import("/src/views/dashboard/sectiontemplates/FooterTemplates.vue"),
+							component: () => import("/src/views/dashboard/sectionTemplates/FooterTemplates.vue"),
 						},
 						{
 							path: "headertemplates",
 							name: "HeaderTemplates",
-							component: () => import("/src/views/dashboard/sectiontemplates/HeaderTemplates.vue"),
+							component: () => import("/src/views/dashboard/sectionTemplates/HeaderTemplates.vue"),
 						},
 						{
 							path: "herotemplates",
 							name: "HeroSectionTemplates",
-							component: () => import("/src/views/dashboard/sectiontemplates/HeroSectionTemplates.vue"),
+							component: () => import("/src/views/dashboard/sectionTemplates/HeroSectionTemplates.vue"),
 						},
 						{
 							path: "testimonialtemplates",
 							name: "TestimonialTemplates",
-							component: () => import("/src/views/dashboard/sectiontemplates/TestimonialTemplates.vue"),
+							component: () => import("/src/views/dashboard/sectionTemplates/TestimonialTemplates.vue"),
 						},
 					],
 				},
