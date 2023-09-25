@@ -7,14 +7,14 @@ defineProps(["isExpand"]);
 	<div class="sideNawWrapper flex w-full">
 		<div
 			class="sideNav mt-4 w-[50px] h-[89vh] overflow-hidden hover:w-[300px] duration-300 fixed left-0 rounded-xl contentShadow group overflow-y-auto"
-			:class="{ '!w-[300px]': isExpand }"
+			:class="{ '!w-[230px]': isExpand }"
 		>
 			<div class="bg-cyan-100 rounded-xl h-full">
 				<SideNavItems :isExpand="isExpand" />
 			</div>
 		</div>
 
-		<div class="contentWrapper w-full px-8 py-4 ml-12 duration-300" :class="{ 'ml-80': isExpand }">
+		<div class="contentWrapper w-full px-8 py-4 ml-12 duration-300" :class="{ 'ml-56': isExpand }">
 			<div class="content p-8 min-h-[89vh] contentShadow rounded-xl bg-white">
 				<slot />
 			</div>

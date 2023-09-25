@@ -1,5 +1,5 @@
 <template>
-	<div class="card-1 contentShadow bg-cyan-100 flex flex-wrap flex-col p-4 m-4">
+	<div class="card-1 contentShadow bg-cyan-100 flex flex-wrap flex-col p-4 mt-8 w-full">
 		<h2 class="CardHeader mb-2 capitalize" :class="headerClass">
 			<slot name="header" />
 		</h2>
