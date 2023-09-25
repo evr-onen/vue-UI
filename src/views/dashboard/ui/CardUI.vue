@@ -77,8 +77,8 @@ const rowsProps = [
 </script>
 
 <template>
-	<div class="pageWrapper">
-		<div class="">
+	<div class="pageWrapper flex flex-col items-center">
+		<div class="flex flex-col items-center">
 			<CardOne class="max-w-[300px] w-full" buttons="true" :action="() => ttt()" m="1rem">
 				<template #header> header </template>
 				<p class="">
@@ -101,7 +101,7 @@ const rowsProps = [
 						<Table :row="rowsSlots" :column="columnsArr" titleClass=""> </Table>
 					</div>
 					<div class="flex flex-col w-full text-gray-600 text-[0.82rem] mt-4">
-						<h4 class="text-center font-semibold">Tabs Class</h4>
+						<h4 class="text-center font-semibold">Card Class</h4>
 
 						<Table :row="rowsClass" :column="columnsArr" titleClass=""> </Table>
 					</div>

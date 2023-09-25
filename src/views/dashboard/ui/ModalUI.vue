@@ -1,12 +1,12 @@
 <template>
-	<div class="pageWrapper">
-		<CardOne class="w-[700px]">
+	<div class="pageWrapper flex flex-col items-center">
+		<CardOne class="max-w-[700px]">
 			<button class="buttonOne" @click="openModal">Open Modal</button>
 		</CardOne>
-		<CardOne class="w-[700px]">
+		<CardOne class="max-w-[700px]">
 			<div class="flex flex-col w-full">
 				<div class="flex flex-col w-full text-gray-600 text-[0.82rem]">
-					<h4 class="text-center font-semibold">Tabs Props</h4>
+					<h4 class="text-center font-semibold">Modal Props</h4>
 
 					<Table :row="rowsProps" :column="columnsArr" titleClass=""> </Table>
 				</div>

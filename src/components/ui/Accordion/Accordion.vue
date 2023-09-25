@@ -11,7 +11,6 @@ const { data, titles, contents, titleClass, disableRounded } = defineProps({
 });
 
 const dataProp = computed(() => {
-	console.log(disableRounded);
 	if (data) {
 		return data;
 	} else {
@@ -25,7 +24,7 @@ const dataProp = computed(() => {
 		return tmpData;
 	}
 });
-const selectedTabIndex = ref(0);
+const selectedTabIndex = ref(null);
 const changeTabIndexHandler = (index) => {
 	if (selectedTabIndex.value !== index) {
 		selectedTabIndex.value = index;
@@ -56,19 +55,24 @@ const changeTabIndexHandler = (index) => {
 			</div>
 
 			<div
-				class="content bg-cyan-700 text-white px-4 max-h-0 duration-500 overflow-hidden"
-				:class="{ selectedTab: selectedTabIndex === index, [contentClass]: true }"
+				class="content bg-cyan-700 text-white max-h-0 transition-all overflow-hidden"
+				:class="{ selectedTab: selectedTabIndex === index }"
 			>
-				<slot v-if="$slots[Object.keys($slots)[index]]" :name="index" />
-				<p v-else>
-					{{ itemData.content }}
-				</p>
+				<div class="w-full px-4 py-4" :class="{ [contentClass]: true }">
+					<slot v-if="$slots[Object.keys($slots)[index]]" :name="index" class="py-4" />
+					<p v-else class="">
+						{{ itemData.content }}
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
 </template>
 <style scoped>
 .selectedTab {
-	@apply max-h-[500px] py-4;
+	@apply max-h-[500px];
+}
+.content {
+	transition: 700ms;
 }
 </style>

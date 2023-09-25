@@ -58,7 +58,7 @@ const rowsSlots = [
 ];
 </script>
 <template>
-	<div class="pageWrapper flex justify-evenly flex-wrap">
+	<div class="pageWrapper flex flex-col items-center justify-evenly flex-wrap">
 		<div class="">
 			<CardOne class="max-w-[350px] w-full">
 				<BreadCrumbs :path="pathPropValue" useHomeIcon><chevronRight class="w-5 h-5" /></BreadCrumbs>
