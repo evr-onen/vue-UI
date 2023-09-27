@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import { Form, ErrorMessage, FieldArray, useFieldArray, useForm, configure } from "vee-validate";
+import { Form, Field, ErrorMessage, FieldArray, useFieldArray, useForm, configure } from "vee-validate";
 import * as yup from "yup";
 
 const initialData = {
@@ -28,8 +28,8 @@ const { errors, setErrors, setFieldValue, handleSubmit } = useForm({
 
 const { fields, push, remove } = useFieldArray("users");
 configure({
-	bails: true,
-	validateOnInput: false,
+	bails: false,
+	validateOnInput: true,
 });
 const onSubmit = handleSubmit((data) => {
 	console.log(JSON.stringify(data));
@@ -50,7 +50,9 @@ const onSubmit = handleSubmit((data) => {
 						<h2>User #{{ idx + 1 }}</h2>
 						<div class="flex flex-col">
 							<label class="text-backGroundPrimary font-semibold" :for="`name_${idx}`">Name</label>
-							<input
+							<Field
+								as="input"
+								type="text"
 								v-model="field.value.name"
 								class="px-4 py-2 border border-black focus-visible:outline-cyan-800 focus-visible:rounded-none"
 								:id="`name_${idx}`"

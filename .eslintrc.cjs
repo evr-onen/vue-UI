@@ -7,6 +7,6 @@ module.exports = {
 	},
 	rules: {
 		"vue/multi-word-component-names": "off",
-		rules: { "no-console": "ff" },
+		rules: { "no-console": "off" },
 	},
 };
