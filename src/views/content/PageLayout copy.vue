@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from "vue";
 import { Form, ErrorMessage, FieldArray, useFieldArray, useForm, configure } from "vee-validate";
 import * as yup from "yup";
 
@@ -26,9 +25,8 @@ const { errors, setErrors, setFieldValue, handleSubmit } = useForm({
 	validationSchema: schema,
 });
 
-const { fields, push, remove } = useFieldArray("users");
+const { fields, push, remove, errorMessage } = useFieldArray("users");
 configure({
-	bails: true,
 	validateOnInput: false,
 });
 const onSubmit = handleSubmit((data) => {
@@ -55,7 +53,7 @@ const onSubmit = handleSubmit((data) => {
 								:id="`name_${idx}`"
 								:name="`users[${idx}].name`"
 							/>
-							<!-- {{ errorMessage }} -->
+
 							<ErrorMessage :name="`users[${idx}].name`" />
 						</div>
 						<button
