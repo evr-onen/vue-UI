@@ -38,6 +38,7 @@ const onSubmit = handleSubmit((data) => {
 
 <template>
 	<div class="w-full flex flex-col items-center">
+		<router-link to="/dashboard/welcome" class="buttonOne"> go to Dashboard</router-link>
 		<div class="max-w-[700px] w-full">
 			<h1>vee-validate array fields</h1>
 
