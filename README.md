@@ -1,1 +1,1 @@
-alismak icin yaptigim birsey.
+reusable componentlerin nasil yapildigini arastirdigim bir proje..
