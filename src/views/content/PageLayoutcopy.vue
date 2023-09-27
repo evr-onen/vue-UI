@@ -1,5 +1,6 @@
 <script setup>
-import { Form, ErrorMessage, FieldArray, useFieldArray, useForm, configure } from "vee-validate";
+import { ref } from "vue";
+import { Form, Field, ErrorMessage, FieldArray, useFieldArray, useForm, configure } from "vee-validate";
 import * as yup from "yup";
 
 const initialData = {
@@ -25,9 +26,10 @@ const { errors, setErrors, setFieldValue, handleSubmit } = useForm({
 	validationSchema: schema,
 });
 
-const { fields, push, remove, errorMessage } = useFieldArray("users");
+const { fields, push, remove } = useFieldArray("users");
 configure({
-	validateOnInput: false,
+	bails: false,
+	validateOnInput: true,
 });
 const onSubmit = handleSubmit((data) => {
 	console.log(JSON.stringify(data));
@@ -36,6 +38,7 @@ const onSubmit = handleSubmit((data) => {
 
 <template>
 	<div class="w-full flex flex-col items-center">
+		<router-link to="/dashboard/welcome" class="buttonOne"> go to Dashboard</router-link>
 		<div class="max-w-[700px] w-full">
 			<h1>vee-validate array fields</h1>
 
@@ -47,13 +50,15 @@ const onSubmit = handleSubmit((data) => {
 						<h2>User #{{ idx + 1 }}</h2>
 						<div class="flex flex-col">
 							<label class="text-backGroundPrimary font-semibold" :for="`name_${idx}`">Name</label>
-							<input
+							<Field
+								as="input"
+								type="text"
 								v-model="field.value.name"
 								class="px-4 py-2 border border-black focus-visible:outline-cyan-800 focus-visible:rounded-none"
 								:id="`name_${idx}`"
 								:name="`users[${idx}].name`"
 							/>
-
+							<!-- {{ errorMessage }} -->
 							<ErrorMessage :name="`users[${idx}].name`" />
 						</div>
 						<button
