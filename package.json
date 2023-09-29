@@ -10,6 +10,7 @@
 	},
 	"dependencies": {
 		"pinia": "^2.1.6",
+		"primevue": "^3.35.0",
 		"swiper": "^10.2.0",
 		"vee-validate": "^4.11.6",
 		"vue": "^3.3.4",
