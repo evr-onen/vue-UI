@@ -1,1 +1,1 @@
-reusable componentlerin nasil yapildigini arastirdigim bir proje..
+Reusable Component arsivim. Yaptiklarimi buraya koyuyorum. 
